@@ -1,0 +1,43 @@
+.signup-header {
+   margin-top: 18%;
+   margin-left: 40%;
+   margin-right: 40%;
+   border: 2px solid grey
+}
+
+.header {
+   margin-left: 35%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    margin-left: 2rem;
+}
+
+.button {
+    margin-top: 1rem;
+   
+}
+
+.button button {
+    cursor: pointer;
+    background-color: rgb(96, 96, 217);
+    color: white;
+    width: 150px;
+    border-radius: 15px;
+    margin-left: 15%;
+    margin-bottom: 0.5rem;
+}
+
+.input{
+    margin-top: 0.5rem;
+}
+
+.login-footer{
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 1rem;
+    
+}
