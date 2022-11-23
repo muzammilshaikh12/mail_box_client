@@ -1,0 +1,11 @@
+.myfooter1{
+    background-color:  rgb(96, 96, 217);
+    height: 6.5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.myfooter1 h3{
+    color: white;
+}

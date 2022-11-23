@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 
+import {Link} from 'react-router-dom'
+
 import "./signup.css";
 
 const Signup = () => {
@@ -70,7 +72,7 @@ const Signup = () => {
       </div>
       <div className="login-footer">
         <span>Have an account?</span>
-        <span>Login</span>
+        <Link to='/login' className="link">Login</Link>
       </div>
     </Fragment>
   );
