@@ -15,16 +15,20 @@ const sequelize = require('./util/database');
 // Models
 const User = require('./models/user')
 
+const Mail = require('./models/mail')
+
 
 // Routes
 const userRoute = require('./routes/user')
 
-app.use(userRoute)
+const mailRoute = require('./routes/mail')
 
+app.use(userRoute)
+app.use(mailRoute)
 
 // Association
-
-
+User.hasMany(Mail)
+Mail.belongsTo(User)
 
 
 sequelize.sync()

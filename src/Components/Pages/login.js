@@ -19,7 +19,7 @@ axios.post('http://localhost:4000/login',obj)
   event.target.email.value = ''
   event.target.password.value = ''
   localStorage.setItem('token', response.data.token)
-  history.replace('/home')
+  history.replace('/')
 })
 .catch(err=>{
   alert(err.response.data.message)

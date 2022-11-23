@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Signup from "./Components/Pages/signup";
 
@@ -10,20 +10,26 @@ import Footer from "./Components/footer";
 
 import Login from "./Components/Pages/login";
 
+import Mail from "./Components/Pages/sendmail";
+
 function App() {
   return (
     <Fragment>
       <Header />
-      <Route path="/signup">
+      <main>
+        <Switch>
+      <Route path="/signup" exact>
         <Signup />
       </Route>
-      <Route path="/login">
+      <Route path="/login" exact>
         <Login />
       </Route>
-      <Route path='home'>
-       <div>Welcome to your MailBox.</div>
+      <Route path='/'>
+      <Mail />
       </Route>
-      <Footer />
+      </Switch>
+      </main>
+     <Footer />
     </Fragment>
   );
 }
