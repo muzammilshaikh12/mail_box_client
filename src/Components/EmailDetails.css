@@ -1,0 +1,13 @@
+.detaildiv{
+    margin: 5rem 20rem;
+    margin-bottom: 15.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-color:  rgb(96, 96, 217);
+}
+
+.span{
+    display: flex;
+    margin: 1rem 0rem;
+    align-items: flex-start;
+}

@@ -8,4 +8,6 @@ const mailController = require('../controllers/mail')
 
 router.post('/sendmail',authenticator.authenticator,mailController.postmail)
 
+router.get('/getmail',authenticator.authenticator,mailController.getMail)
+
 module.exports = router

@@ -1,0 +1,25 @@
+.links{
+    text-decoration: none;
+    margin: 1rem 1rem;
+    font-size: 25px;
+    color: white;
+    border:1px solid white;
+    padding: 0  8px;
+    border-radius: 8px;
+}
+
+.navdiv{
+   display: flex;
+   align-items: center;
+
+   }
+
+   .button1{
+    margin: 1rem 1rem;
+    font-size: 25px;
+    color: white;
+    border:1px solid white;
+    padding: 5px  8px;
+    border-radius: 8px;
+    background-color: transparent;
+   }

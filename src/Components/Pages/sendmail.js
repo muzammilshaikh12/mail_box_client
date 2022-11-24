@@ -1,15 +1,16 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useContext } from "react";
 
 import { Editor } from "react-draft-wysiwyg";
 
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import MailContext from "../Store/MailContext";
 
-import axios from 'axios'
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import './sendmail.css'
 
 const Mail = () => {
-  const [EditorValue, setEditorInput] = useState("");
+  const Mailctx = useContext(MailContext)
+  let [EditorValue, setEditorInput] = useState("");
   const onEditorStateChange = (contentState) => {
     let text = "";
     contentState.blocks.forEach((e) => {
@@ -20,34 +21,31 @@ const Mail = () => {
 
   const EmailHandler = (event) => {
     event.preventDefault();
-    let obj = {
+   let obj = {
       email: event.target.email.value,
       content: EditorValue,
     };
-    let token = localStorage.getItem('token')
-  axios.post('http://localhost:4000/sendmail', obj, {
-    headers: { Authorization: token },
-  })
-  .then(response=>{
-    setEditorInput('')
+    Mailctx.MailSendHandler(obj)
     event.target.email.value = ''
-    console.log(response)
-  })
-  .catch(err=>{
-    console.log(err)
-  })
-  };
+    setEditorInput('')
+   };
   return (
     <Fragment>
       <form onSubmit={EmailHandler} className='mailform'>
-        <input type="email" placeholder="To" name="email" className="tom"/>
+        <input type="email" placeholder="To" name="email" className="tom" required/>
         <div className="mailbox">
           <Editor
             toolbarClassName="toolbarClassName"
             wrapperClassName="wrapperClassName"
             editorClassName="editorClassName"
             onContentStateChange={onEditorStateChange}
-           name='mail'
+            editorStyle={{
+              border: "1px solid #C0C0C0",
+              height: "10rem",
+              padding: "8px",
+              overflow: "hidden",
+            }}
+           required
           />
         </div>
         <div className="btn">

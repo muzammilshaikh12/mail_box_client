@@ -1,6 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment,useContext } from "react";
 
 import {Link, useHistory} from 'react-router-dom'
+
+import AuthContext from "../Store/AuthContext";
+
+
 
 import axios from 'axios'
 
@@ -8,6 +12,8 @@ import './login.css'
 
 const Login = () => {
   const history = useHistory()
+  const Authctx = useContext(AuthContext)
+ 
   const LoginHandler = event => {
     event.preventDefault()
  let obj = {
@@ -18,10 +24,12 @@ axios.post('http://localhost:4000/login',obj)
 .then(response=>{
   event.target.email.value = ''
   event.target.password.value = ''
-  localStorage.setItem('token', response.data.token)
+  Authctx.loginHandler(response.data.token)
   history.replace('/')
+
 })
 .catch(err=>{
+  console.log(err)
   alert(err.response.data.message)
 })
   }
