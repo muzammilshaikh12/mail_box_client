@@ -11,3 +11,14 @@
     margin: 1rem 0rem;
     align-items: flex-start;
 }
+
+.deletebtn{
+    background-color:  rgb(96, 96, 217);
+    color: white;
+    margin-left: 22.5rem;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 2rem;
+   
+}

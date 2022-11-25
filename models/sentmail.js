@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 
 const sequelize = require('../util/database')
 
-const inbox = sequelize.define('inbox', {
+const sentmail = sequelize.define('sentmail', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -12,15 +12,12 @@ const inbox = sequelize.define('inbox', {
     content : {
         type: Sequelize.STRING
     },
+    sentBy: {
+      type: Sequelize.INTEGER
+    },
     subject:{
       type:Sequelize.STRING
     },
-    read: {
-        type:Sequelize.BOOLEAN
-    },
-    sentTo: {
-      type: Sequelize.INTEGER
-    }
   })
 
-module.exports = inbox
+module.exports = sentmail

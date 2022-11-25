@@ -29,6 +29,7 @@ const Signup = () => {
         event.target.confirm_password.value = "";
         if(result.ok) {
         console.log(result)
+        alert('Successfully created')
         }
     })
     .catch(err=>{

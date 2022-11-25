@@ -23,16 +23,19 @@ const Mail = () => {
     event.preventDefault();
    let obj = {
       email: event.target.email.value,
+      subject:event.target.subject.value,
       content: EditorValue,
     };
     Mailctx.MailSendHandler(obj)
     event.target.email.value = ''
+    event.target.subject.value=''
     setEditorInput('')
    };
   return (
     <Fragment>
       <form onSubmit={EmailHandler} className='mailform'>
         <input type="email" placeholder="To" name="email" className="tom" required/>
+        <input type="text" placeholder="Subject" name="subject" className="tom" required/>
         <div className="mailbox">
           <Editor
             toolbarClassName="toolbarClassName"

@@ -24,6 +24,8 @@ import SentMail from "./Components/Pages/sentmail";
 
 import EmailDetails from './Components/EmailDetails'
 
+import SentDetails from "./Components/SentDetails";
+
 function App() {
   const Authctx = useContext(AuthContext);
   return (
@@ -52,6 +54,9 @@ function App() {
           </Route>
           <Route path="/sentmail" exact>
             <SentMail />
+          </Route>
+          <Route path="/sentmail/sentdetails" exact>
+            <SentDetails />
           </Route>
            <Route path='*'><Redirect to='/login'/></Route>
         </Switch>
